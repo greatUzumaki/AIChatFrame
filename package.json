@@ -1,0 +1,17 @@
+{
+  "name": "chatframe",
+  "version": "1.0.0",
+  "description": "Chat Frame with AI",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --minify --outfile=dist/chat.min.js",
+    "tsc": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.19.4",
+    "typescript": "^5.2.2"
+  }
+}
