@@ -1,14 +1,17 @@
 (() => {
-  const CHAT_ID = document?.currentScript?.getAttribute('c-id');
-  if (!CHAT_ID) {
-    throw Error('c-id is missing in <script> tag');
-  }
+  const linkElement = document.createElement('link');
+  linkElement.rel = 'stylesheet';
+  linkElement.href = './dist/style.css';
+  document.head.appendChild(linkElement);
 
-  var iframe = document.createElement('iframe');
+  const chatComponent = document.createElement('jdiv');
+  chatComponent.innerHTML = `
+        <jdiv class="chat-header">Чат с поддержкой</jdiv>
+        <jdiv class="chat-messages">
+        </jdiv>
+        <textarea class="message-input" placeholder="Введите сообщение"></textarea>
+        <button class="send-button">Отправить</button>
+    `;
 
-  iframe.src = 'https://www.example.com';
-  iframe.width = '300';
-  iframe.height = '200';
-
-  document.body.appendChild(iframe);
+  document.body.appendChild(chatComponent);
 })();
